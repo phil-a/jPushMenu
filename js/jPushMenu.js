@@ -71,7 +71,9 @@
         // Close menu on clicking menu link
         if (o.closeOnClickLink) {
             $('.cbp-spmenu a').on('click',function() {
+              if (!($(this).hasClass(o.exceptOnClickLink))) {
                 jPushMenu.close(o);
+              }
             });
         }
     };
@@ -81,14 +83,15 @@
     * do not directly edit here, use function parameter when call jPushMenu.
     */
     $.fn.jPushMenu.defaultOptions = {
-        pushBodyClass      : 'push-body',
-        showLeftClass      : 'menu-left',
-        showRightClass     : 'menu-right',
-        showTopClass       : 'menu-top',
-        showBottomClass    : 'menu-bottom',
-        activeClass        : 'menu-active',
-        menuOpenClass      : 'menu-open',
-        closeOnClickOutside: true,
-        closeOnClickLink   : true
+        pushBodyClass                : 'push-body',
+        showLeftClass                : 'menu-left',
+        showRightClass               : 'menu-right',
+        showTopClass                 : 'menu-top',
+        showBottomClass              : 'menu-bottom',
+        activeClass                  : 'menu-active',
+        menuOpenClass                : 'menu-open',
+        closeOnClickOutside          : true,
+        closeOnClickLink             : true,
+        closeOnClickLinkExceptClass  : ""
     };
 })(jQuery);
